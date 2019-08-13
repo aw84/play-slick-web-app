@@ -33,3 +33,13 @@ java -cp c:\dev\h2\bin\h2-1.4.199.jar org.h2.tools.RunScript ^
 -url "jdbc:h2:c:\dev\scala\play-slick-web-app\db\the-database" ^
 -user sa -password "sa" -script db\dml-insert.sql
 ```
+
+# Run
+
+Define environment variable `PLAY_APPS_ROOT` pointing to root folder
+that contains this sources
+
+Download latest `sbt-launch*.jar` and put it in `sbt-dist/bin` directory.
+
+Run `sbt.bat ";compile;run"`
+
