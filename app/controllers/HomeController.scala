@@ -1,12 +1,12 @@
 package controllers
 
-import dao.TokenDAO
 import javax.inject.Inject
 import play.api.mvc._
+import services.TokenServices
 
 import scala.concurrent.{ ExecutionContext, Future }
 
-class HomeController @Inject() (tokenDao: TokenDAO, controllerComponents: ControllerComponents)(implicit executionContext: ExecutionContext) extends AbstractController(controllerComponents) {
+class HomeController @Inject() (tokenServices: TokenServices, controllerComponents: ControllerComponents)(implicit executionContext: ExecutionContext) extends AbstractController(controllerComponents) {
 
   def someAsyncApi: Future[Int] = Future {
     1
@@ -28,7 +28,7 @@ class HomeController @Inject() (tokenDao: TokenDAO, controllerComponents: Contro
   }
 
   def dbGet: Action[AnyContent] = Action.async {
-    tokenDao.all.map { case (t) => Ok(views.html.dbGet(t)) }
+    tokenServices.all.map { case (t) => Ok(views.html.dbGet(t)) }
   }
 
   /**

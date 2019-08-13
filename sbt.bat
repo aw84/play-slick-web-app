@@ -1,3 +1,2 @@
-@REM SBT launcher script
-
+@echo off
 .\sbt-dist\bin\sbt.bat %*

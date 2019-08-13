@@ -1,3 +1,7 @@
+@echo off
+set SBT_HOME=%~dp0
+java -cp "%SBT_HOME%sbt-launch-1.2.8.jar" xsbt.boot.Boot %*
+exit /b 1
 @REM SBT launcher script
 @REM 
 @REM Envioronment:
